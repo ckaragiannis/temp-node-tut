@@ -1,0 +1,18 @@
+
+// https://www.youtube.com/watch?v=8aGhZQkoFbQ
+// https://reactjs.org/
+// https://github.com/ckaragiannis/temp-node-tut
+// https://www.npmjs.com/package/lodash
+// https://nodejs.org/en/docs/guides/event-loop-timers-and-nexttick/
+ // https://github.com/john-smilga/node-express-course/blob/main/01-node-tutorial/13-event-emitter.js
+ // https://www.johnsmilga.com/projects
+ // https://www.youtube.com/watch?v=Oe421EPjeBE
+
+ 
+ // npm i <packagename>     // local dependency - use this only in this current package
+ // npm i -g <packagename>  // global dependency -  use it in any package 
+ // package.json            // manifest file (stores important info about project/package)
+ // npm init                // create local package.json file answer questions about project
+ // npm init -y             // default everything to yes creating the package.json file
+
+ // git init                // Initialize empty git repository under pwd/.git folder for project

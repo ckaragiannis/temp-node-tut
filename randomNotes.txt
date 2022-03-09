@@ -7,6 +7,8 @@
 // https://github.com/john-smilga/node-express-course/blob/main/01-node-tutorial/13-event-emitter.js
 // https://www.johnsmilga.com/projects
 // https://www.youtube.com/watch?v=Oe421EPjeBE
+// https://nodejs.dev/learn/the-nodejs-event-loop
+// https://www.youtube.com/watch?v=PNa9OMajw9w
 
  
 // npm i <packagename>     // local dependency - use this only in this current package

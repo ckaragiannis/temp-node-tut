@@ -16,3 +16,35 @@ console.log(_.flattenDeep(items), `and the length of the array is: ${_.flattenDe
 console.log(_.flatMapDeep(items2)[2].example4);
 
 console.log('Finished Running the justTestingCode script');
+
+
+console.log('first task');
+
+setTimeout(() => {
+    console.log('second task')
+}, 0);
+
+console.log('next task');
+
+
+
+//another example:
+
+const { readFile } = require('fs');
+
+console.log('starting another first task');
+
+readFile('./content/first.txt', 'utf8', (err, result) => {
+    if (err) {
+        console.log(err);
+        return;
+    }
+    else {
+        console.log(result);
+        console.log('Completed first task');
+    }
+});
+
+console.log('Starting next task');
+
+

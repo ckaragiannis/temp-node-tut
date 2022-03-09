@@ -4,15 +4,42 @@
 // https://github.com/ckaragiannis/temp-node-tut
 // https://www.npmjs.com/package/lodash
 // https://nodejs.org/en/docs/guides/event-loop-timers-and-nexttick/
- // https://github.com/john-smilga/node-express-course/blob/main/01-node-tutorial/13-event-emitter.js
- // https://www.johnsmilga.com/projects
- // https://www.youtube.com/watch?v=Oe421EPjeBE
+// https://github.com/john-smilga/node-express-course/blob/main/01-node-tutorial/13-event-emitter.js
+// https://www.johnsmilga.com/projects
+// https://www.youtube.com/watch?v=Oe421EPjeBE
 
  
- // npm i <packagename>     // local dependency - use this only in this current package
- // npm i -g <packagename>  // global dependency -  use it in any package 
- // package.json            // manifest file (stores important info about project/package)
- // npm init                // create local package.json file answer questions about project
- // npm init -y             // default everything to yes creating the package.json file
+// npm i <packagename>     // local dependency - use this only in this current package
+// npm i -g <packagename>  // global dependency -  use it in any package 
+// package.json            // manifest file (stores important info about project/package)
+// npm init                // create local package.json file answer questions about project
+// npm init -y             // default everything to yes creating the package.json file
 
- // git init                // Initialize empty git repository under pwd/.git folder for project
+// git init                // Initialize empty git repository under pwd/.git folder for project
+
+
+// git clone git@github.com:ckaragiannis/temp-node-tut.git     // ssh code from github.com
+                            // clones the temp-node-tut into the current directory and then run npm install to 
+                            // install all of the dependencies properly and then you can run your code
+
+//  ssh-keygen -t rsa       // navigate to your Windows Home Directory using bash /c/Users/Temp/.ssh 
+                            // and run this comment  ssh-keygen -t rsa and this will generate a id.rsa
+                            // file which you will just copy (using Notepad) onto github (under settings SSH..) 
+                            // and assign a password to that you will use when you clone the git repository again.
+
+
+
+
+
+
+
+/* 
+ "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ckaragiannis/temp-node-tut.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ckaragiannis/temp-node-tut/issues"
+  },
+  "homepage": "https://github.com/ckaragiannis/temp-node-tut#readme",
+  */

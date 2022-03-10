@@ -5,49 +5,70 @@
 
 
 
+// Example 1:
+const { readFile } = require('fs').promises;            // Must use a .promises for the await readLines below because: 
+                                                        //  an await makes a function wait for a promise
 
-const { readFile } = require('fs');
-
-const getText = (path) => {
+// const getText = function(path) {
+// const getText = (path) => {
+const getText = async(path) => {
     console.log('1..');
-    console.log(path);
-    return new Promise((resolve, reject)=> {
+    return new Promise(async (resolve, reject)=> {
         console.log('2..');
-        readFile(path, 'utf8',(err, data)=> {
+        await readFile(path, 'utf8',(err, data)=> {
             console.log('3..');
             if (err) {
                 reject(' Rejected error: ' + err);
             } else {
                 resolve(' Resolved data: ' + data);
             }
-            console.log('4..');
         });
     });
 };
 
-// getText('./content/first.txt')
-//     .then((result)=> console.log(' Then: ' + result))
-//     .catch((err)=> console.log(' Catch: ' + err));
+console.log(getText);
+
+getText('./content/first.txt')
+    .then((result)=> console.log(' Then: ' + result))
+    .catch((err)=> console.log(' Catch: ' + err));
 
 
-const { writeFile } = require('fs').promises;
+
+// Now Lets write this information using async/await function:
+// const { writeFile }  = require('fs').promises;                      // Must use a .promises for the await readLines below because: 
+//                                                                     //  an await makes a function wait for a promise
+
+const fs = require('fs').promises;
 
 const start = async() => {
     try {
-        // const first = await readFile('./content/first.txt', 'utf8');
-        // const second = await readFile('./content/second.txt', 'utf8');
-        const first = await getText('../content/first.txt');
-        console.log(first);
+        console.log('started at the try block');
+        console.log('1...');
+        const first = await readFile('./content/first.txt', 'utf8');
+        console.log('2...');
+        const second = await readFile('./content/second.txt', 'utf8');
+        // const first = await getText('./content/first.txt');
+        // // console.log('First parameter is : ' + first);
         // const second = await getText('./content/second.txt');
+        // console.log('Second parameter is : ' + second);
 
-        // await writeFile(
-        //     './content/result-mind-blown.txt',
-        //     `This is AWESOME : ${first} : ${second}`,
-        //     { flag: 'w' }
-        // );
+        console.log('3...');
+        // await fs.writeFile('./content/result-mind-blown.txt', `This is AWESOME : ${ first } : ${ second }`, {flag: 'w'}, (err)=> {
+        //      if (err) {
+        //          console.log(err);
+        //      }
+        //  });
+        await fs.writeFile(
+             './result-mind-blown.txt',
+             `This is AWESOME : ${first} : ${second}`,
+             { flag: 'w' }
+        );
+        console.log('4... ending the try block');
     } catch (error) {
         console.log('[*** ' + error + ' ***]');             // This error is actually everything in the reject(err) above
     }
 };
 
+console.log('before start()');
 start();
+console.log('after start()');

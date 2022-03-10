@@ -28,7 +28,7 @@
 
 // console.log(getText);
 
-// getText('./content/first.txt')
+// getText('../content/first.txt')
 //     .then((result)=> console.log(result))
 //     .catch((err)=> console.log(' Catch: ' + err));
 
@@ -44,6 +44,10 @@ console.log('\n\n***** NEXT CODE EXAMPLE ***** \n\n');
 // Now Lets write this information using async/await function:
 const { readFile, writeFile }  = require('fs').promises;            // Must use a .promises for the await readLine & writeLine below because: 
                                                                     //  an await makes a function wait for a promise
+// Or:
+// const util = require('util');
+// const readFilePromise = util.promisify(readFile);
+// const writeFilePromise = util.promisify(writeFile);
 
 // const fs = require('fs').promises;
 
@@ -51,8 +55,11 @@ const start = async(path1, path2) => {
     try {
         console.log('1... starting the try block');
         const first = await readFile(path1, 'utf8');
+        // const first = await readFilePromise(path1, 'utf8');
         console.log('2...');
         const second = await readFile(path2, 'utf8');
+        //  const second = await readFilePromise(path2, 'utf8');
+
         // const first = await getText(path1);
         // // console.log('First parameter is : ' + first);
         // const second = await getText(path2);
@@ -66,8 +73,9 @@ const start = async(path1, path2) => {
         //      }
         //  });
 
+        // await writeFilePromise(
         await writeFile(
-            './content/result-mind-blown.txt',
+        '../content/result-mind-blown.txt',
             `This is AWESOME : ${first} : ${second}`,
             { flag: 'w' }
         );
@@ -84,5 +92,11 @@ const start = async(path1, path2) => {
 };
 
 console.log('before start()');
-start('./content/first.txt', './content/second.txt');
+start('../content/first.txt', '../content/second.txt');
 console.log('after start()');
+
+
+
+
+
+

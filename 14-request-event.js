@@ -14,6 +14,10 @@ server.on('request', (req,res)=> {
     res.end(`Welcome`);
 });
 
+server.on('connection', (stream)=> {
+    console.log('Someone Connected: ' + stream.localAddress);      // using localhost returns 1, using 127.0.0.1:5000 returns ffff:
+});
+
 server.listen(5000);
 
 

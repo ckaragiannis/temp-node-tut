@@ -54,7 +54,9 @@ myDisplay();
 console.log('-------- Finished Running the Testing script -----------\n');
 
 
+console.log('***** NEXT EXAMPLE **** ');
 
+// ANOTHER EXAMPLE:
 
 
 // Node.js program to illustrate 
@@ -75,18 +77,25 @@ const lstat = util.promisify(fs.lstat)
   
   
 const readFiles = async (path) => {
-const files = await readdir(path)
-console.log('Files are: ' + files + ' \n\n');
-for (let file of files) {
-    const stats = await lstat(file)
-    if (stats.isFile()) {
-        console.log(`${file} -----> File`)
-    } else {
-        console.log(`${file} -----> Folder`)
+    const files = await readdir(path)
+    console.log('Files are: ' + files + ' \n\n');
+    for (let file of files) {
+        const stats = await lstat(file)
+        if (stats.isFile()) {
+            console.log(`${file} -----> File`)
+        } else {
+            console.log(`${file} -----> Folder`)
+        }
     }
-  }
 }
 readFiles('./')
     .catch((err) => {
         console.log('Outrageous Error: ' + err)
 });
+
+
+
+console.log('***** NEXT EXAMPLE **** ');
+
+// ANOTHER EXAMPLE:
+

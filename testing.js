@@ -43,7 +43,7 @@ myPromise.then(
 
 async function myDisplay() {
     let _Promise = new Promise((resolve, reject) => {
-        resolve("RESOLVED");
+        resolve(`RESOLVED`);
     });
     console.log(await _Promise);
 }
@@ -51,5 +51,42 @@ myDisplay();
 
 
 
-
 console.log('-------- Finished Running the Testing script -----------\n');
+
+
+
+
+
+// Node.js program to illustrate 
+// util.promisify() methods
+  
+// Importing Utilities module
+const util = require('util')
+  
+// importing File System module
+const fs = require('fs');
+const { resolve } = require('path');
+  
+// Use promisify to convert 
+// callback based methods to 
+// promise based methods
+const readdir = util.promisify(fs.readdir)
+const lstat = util.promisify(fs.lstat)
+  
+  
+const readFiles = async (path) => {
+const files = await readdir(path)
+console.log('Files are: ' + files + ' \n\n');
+for (let file of files) {
+    const stats = await lstat(file)
+    if (stats.isFile()) {
+        console.log(`${file} -----> File`)
+    } else {
+        console.log(`${file} -----> Folder`)
+    }
+  }
+}
+readFiles('./')
+    .catch((err) => {
+        console.log('Outrageous Error: ' + err)
+});

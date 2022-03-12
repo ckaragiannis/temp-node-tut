@@ -5,7 +5,7 @@ const { readFile, writeFile }  = require('fs');
 // const readFilePromise = util.promisify(readFile);
 // const writeFilePromise = util.promisify(writeFile);
 
-const start = (path1, path2) => {
+const start = async (path1, path2) => {
 
     return new Promise((resolve, reject)=> {
         console.log('1... ');

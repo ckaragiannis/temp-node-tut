@@ -53,7 +53,7 @@ const readFilePromise = util.promisify(readFile);
 const writeFilePromise = util.promisify(writeFile);
 
 const start = async(path1, path2) => {
-    try {
+//    try {
         console.log('1... starting the try block');
         // const first = await readFile(path1, 'utf8');
         const first = await readFilePromise(path1, 'utf8');
@@ -89,14 +89,19 @@ const start = async(path1, path2) => {
         // );
         
         console.log('4... ending the try block');
-    } catch (error) {
-        console.log('[*** ' + error + ' ***]');             // This error is actually everything in the reject(err) above
-    }
+ //   } catch (error) {
+ //       console.log('[*** ' + error + ' ***]');             // This error is actually everything in the reject(err) above
+ //   }
 };
 
 console.log('before start()');
 
-start('../content/first.txt', '../content/second.txt');
+// start('../content/first.txt', '../content/second.txt');          // use this way if you are doing the try/catch(err) code in block above
+start('../content/first.txt', '../content/second.txt')              // use this way to catch the error and not do the TRY/CATCH(err) block in the code above
+    .catch((err)=> { 
+        console.log('There was an ERROR you big goof: ' + err);
+    });
+
 console.log('after start()');
 
 

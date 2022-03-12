@@ -87,6 +87,7 @@ const start = async(path1, path2) => {
         //      `This is AWESOME : ${first} : ${second}`,
         //      { flag: 'w' }
         // );
+        
         console.log('4... ending the try block');
     } catch (error) {
         console.log('[*** ' + error + ' ***]');             // This error is actually everything in the reject(err) above
@@ -94,6 +95,7 @@ const start = async(path1, path2) => {
 };
 
 console.log('before start()');
+
 start('../content/first.txt', '../content/second.txt');
 console.log('after start()');
 
